@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142a4f">
+  <meta name="description" content="Quick setup for external visitors using Logitech Swytch in a meeting room.">
+  <title>Meeting Room | Connect &amp; Present</title>
+  <style>
+    :root { color-scheme:light; --ink:#1b2c4b; --muted:#53627a; --blue:#1f58cf; --light:#f5f7fb; --line:#dfe5f0; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; background:var(--light); color:var(--ink); line-height:1.5; }
+    .staff { padding:13px 20px; background:#fff3d1; border-bottom:2px solid #e1bb61; text-align:center; font-size:14px; }
+    .staff strong { color:#724800; }
+    header { background:#142a4f; padding:33px 20px 63px; color:#fff; text-align:center; }
+    header .eyebrow { color:#bfd6ff; text-transform:uppercase; font-size:12px; font-weight:800; letter-spacing:.1em; }
+    h1 { margin:9px 0; font-size:clamp(28px,5vw,39px); line-height:1.16; }
+    header p { margin:0 auto; max-width:540px; color:#deebff; }
+    main { max-width:690px; margin:-34px auto 0; padding:0 18px 30px; }
+    .panel { background:#fff; padding:clamp(20px,5vw,34px); border:1px solid var(--line); border-radius:18px; box-shadow:0 10px 30px rgba(10,29,63,.08); }
+    .try { background:#eef9f0; border:1px solid #bfdfc6; border-radius:12px; padding:16px 18px; }
+    .try strong { display:block; font-size:21px; }
+    .try p { margin:6px 0 0; color:#2f6040; }
+    h2 { font-size:20px; margin:24px 0 6px; }
+    .muted { color:var(--muted); margin:0 0 15px; }
+    .download { display:block; text-align:center; color:#fff; font-size:18px; font-weight:800; padding:17px; background:var(--blue); text-decoration:none; border-radius:12px; }
+    .download:hover,.download:focus-visible { background:#1845a7; }
+    .small { font-size:13px; color:var(--muted); margin:10px 0; }
+    a { color:#2052b7; }
+    .switch { margin:12px 0 4px; font-size:14px; }
+    .steps { padding-left:24px; margin:11px 0 0; }
+    .steps li { padding:0 0 10px 4px; }
+    .steps li::marker { color:var(--blue); font-weight:bold; }
+    details { margin-top:21px; border-top:1px solid var(--line); padding-top:17px; }
+    summary { font-weight:700; cursor:pointer; }
+    details li { font-size:14px; margin-bottom:7px; }
+    .phone { display:none; background:#eaf2ff; padding:14px 16px; border:1px solid #bcd0fb; border-radius:12px; margin:0 0 19px; }
+    .phone p { margin:5px 0; font-size:14px; }
+    .phone code { display:block; overflow-wrap:anywhere; font-size:13px; margin:8px 0; }
+    .notice { background:#f2f5fb; border-radius:12px; padding:14px; margin-top:19px; font-size:14px; }
+    footer { padding:0 18px 28px; text-align:center; color:var(--muted); font-size:12px; }
+    [hidden] { display:none!important; }
+  </style>
+</head>
+<body>
+  <div class="staff"><strong>Master employees:</strong> Please contact <strong>TACTICS</strong> for meeting-room or DisplayLink assistance. This guide is for external visitors.</div>
+  <header>
+    <div class="eyebrow">External visitor quick setup</div>
+    <h1>Connect &amp; Present</h1>
+    <p>Use the purple Logitech Swytch USB-A or USB-C connector to share your screen and access the room camera, microphone and speakers.</p>
+  </header>
+  <main>
+    <section class="panel">
+      <div id="phone-info" class="phone" aria-live="polite">
+        <strong>Viewing this on a phone?</strong>
+        <p>Open the same page on the laptop you want to present from:</p>
+        <code>ssharma533.github.io/DisplayLink-Driver/</code>
+        <a id="send-link" href="mailto:?subject=Meeting%20room%20setup&amp;body=https%3A%2F%2Fssharma533.github.io%2FDisplayLink-Driver%2F">Email the link to your laptop</a>
+      </div>
+
+      <div class="try">
+        <strong>1. Plug in the purple cable first</strong>
+        <p>Already working? You're done! DisplayLink may already be installed, or Windows may set it up automatically.</p>
+      </div>
+
+      <h2>2. Not working? Get DisplayLink</h2>
+      <p class="muted" id="platform-help">Download the official driver for your laptop only if needed.</p>
+
+      <a class="download" id="download" href="https://www.synaptics.com/products/displaylink-graphics/downloads/windows" target="_blank" rel="noopener noreferrer">Get DisplayLink for Windows ↗</a>
+      <p class="small">Opens the official Synaptics website. Choose the compatible download and follow its installer prompts.</p>
+      <p class="switch">Different laptop? <a id="other" href="https://www.synaptics.com/products/displaylink-graphics/downloads/macos" target="_blank" rel="noopener noreferrer">Mac download</a></p>
+
+      <h2>3. Reconnect and start your meeting</h2>
+      <ol class="steps">
+        <li>Connect the purple USB-A/USB-C cable.</li>
+        <li>In Teams or Zoom, choose the <strong>Logitech room camera, microphone and speakers</strong> if not already selected.</li>
+        <li id="platform-tip">On Windows, press <strong>Win + P</strong> and choose <strong>Duplicate</strong> if needed.</li>
+      </ol>
+
+      <details>
+        <summary>Having trouble?</summary>
+        <ul>
+          <li><strong>Windows:</strong> Allow a moment for driver setup or Windows Update, if permitted by company policy.</li>
+          <li><strong>Mac:</strong> Run DisplayLink Manager and approve the screen recording permission when prompted.</li>
+          <li><strong>Work laptop:</strong> Your company's security settings may block driver installation. Contact your own IT team or meeting host.</li>
+          <li><strong>Chromebook:</strong> ChromeOS may already support DisplayLink without a separate driver download.</li>
+        </ul>
+      </details>
+
+      <div class="notice"><strong>Need help?</strong> If software installation is blocked, ask the meeting organizer for assistance. This page cannot override your company's security policies.</div>
+    </section>
+  </main>
+  <footer>Official DisplayLink software is provided by <a href="https://www.synaptics.com/products/displaylink-graphics/downloads">Synaptics</a>. This is an independent meeting-room guide.</footer>
+  <script>
+    (function () {
+      "use strict";
+      var w = "https://www.synaptics.com/products/displaylink-graphics/downloads/windows";
+      var m = "https://www.synaptics.com/products/displaylink-graphics/downloads/macos";
+      var ua = navigator.userAgent || "";
+      var mac = /Macintosh|Mac OS X/i.test(ua) && !/iPhone|iPad|iPod/i.test(ua);
+      var win = /Windows/i.test(ua);
+      var phone = /Android|iPhone|iPad|iPod/i.test(ua);
+      var dl = document.getElementById("download");
+      var other = document.getElementById("other");
+      if (phone) { document.getElementById("phone-info").style.display = "block"; }
+      if (mac) {
+        dl.href = m;
+        dl.textContent = "Get DisplayLink for Mac ↗";
+        other.href = w;
+        other.textContent = "Windows download";
+        document.getElementById("platform-tip").innerHTML = "On Mac, open <strong>DisplayLink Manager</strong> and allow screen recording access when prompted.";
+      } else if (!win) {
+        document.getElementById("platform-help").textContent = "Choose the download for your laptop's operating system.";
+        dl.textContent = "Get DisplayLink for Windows ↗";
+        other.textContent = "Mac download";
+      }
+    }());
+  </script>
+</body>
+</html>
